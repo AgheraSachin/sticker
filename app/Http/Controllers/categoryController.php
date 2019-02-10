@@ -34,7 +34,7 @@ class categoryController extends Controller
      */
     public function create()
     {
-        return view('category.add-category', compact('categories'));
+        return view('category.add-category');
     }
 
     /**
