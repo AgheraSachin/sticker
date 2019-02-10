@@ -51,5 +51,4 @@ $app->singleton(
 | from the actual running of the application and sending responses.
 |
 */
-echo "<pre>";print_r($app);exit;
 return $app;
