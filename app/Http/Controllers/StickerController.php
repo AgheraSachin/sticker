@@ -160,6 +160,7 @@ class StickerController extends Controller
         $result = $this->category->masterCall();
         $version = version::get()->toArray();
         $trending = $this->trending->getAll()->toArray();
-        return response()->json(['status' => 1, 'message' => 'success', 'data' => $result,'version'=>$version,'trending'=>$trending], 200);
+        $trendings = Storage::url('trending/').$trending[0]['filename'];
+        return response()->json(['status' => 1, 'message' => 'success', 'data' => $result,'version'=>$version,'trendings'=>$trendings], 200);
     }
 }
