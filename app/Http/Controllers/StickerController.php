@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Repository\Interfaces\categoryInterface;
 use App\Repository\Interfaces\stickerInterface;
+use App\Repository\Interfaces\trendingInterface;
 use App\Sticker;
+use App\trending;
+use App\version;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Image;
@@ -14,11 +17,13 @@ class StickerController extends Controller
 
     public $sticker;
     public $category;
+    public $trending;
 
-    public function __construct(stickerInterface $sticker, categoryInterface $category)
+    public function __construct(stickerInterface $sticker, categoryInterface $category,trendingInterface $trending)
     {
         $this->sticker = $sticker;
         $this->category = $category;
+        $this->trending = $trending;
     }
 
     /**
@@ -153,6 +158,10 @@ class StickerController extends Controller
     public function APIgetAll()
     {
         $result = $this->category->masterCall();
+        $version = version::get()->toArray();
+        $trending = $this->trending->getAll()->toArray();
+        $result['version'] = $version[0]['name'];
+        $result['trending'] = Storage::url('trending/').$trending[0]['filename'];
         return response()->json(['status' => 1, 'message' => 'success', 'data' => $result], 200);
     }
 }

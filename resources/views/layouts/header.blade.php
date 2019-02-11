@@ -126,6 +126,24 @@
                                 </ul>
                             </a>
                         </li>
+                        <li class="treeview">
+                            <a href="{{url('trending')}}">
+                                <i class="fa fa-object-ungroup"></i> <span>Trendings</span>
+                                <ul class="treeview-menu">
+                                    <li><a href="{{url('trending')}}"><i class="fa fa-list"></i> All Trendings</a></li>
+                                    <li><a href="{{url('add-trending')}}"><i class="fa fa-plus"></i>Add New Trendings</a></li>
+                                </ul>
+                            </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="{{url('version')}}">
+                                <i class="fa fa-object-ungroup"></i> <span>Vesrion</span>
+                                <ul class="treeview-menu">
+                                    <li><a href="{{url('version')}}"><i class="fa fa-list"></i> All Vesrion</a></li>
+                                    <li><a href="{{url('add-version')}}"><i class="fa fa-plus"></i>Add New Vesrion</a></li>
+                                </ul>
+                            </a>
+                        </li>
                     </ul>
                 </section>
                 <!-- /.sidebar -->

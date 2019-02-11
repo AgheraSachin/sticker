@@ -39,6 +39,18 @@ Route::group(['middleware' => [ 'auth','web']], function() {
     Route::post('add-sticker', 'StickerController@store');
     Route::get('edit-sticker/{id}', 'StickerController@edit')->name('edit-sticker');
 
+    /*Trendings*/
+    Route::resource('trending', 'TrendingController');
+    Route::get('add-trending', 'TrendingController@create');
+    Route::post('add-trending', 'TrendingController@store');
+    Route::get('edit-trending/{id}', 'TrendingController@edit')->name('edit-trending');
+
+    /*version*/
+    Route::resource('version', 'VersionController');
+    Route::get('add-version', 'VersionController@create');
+    Route::post('add-version', 'VersionController@store');
+    Route::get('edit-version/{id}', 'VersionController@edit')->name('edit-version');
+
 
 
 });

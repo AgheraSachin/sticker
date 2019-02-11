@@ -27,5 +27,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('App\Repository\Interfaces\categoryInterface','App\Repository\Classes\categoryRepo');
         $this->app->bind('App\Repository\Interfaces\trayIconInterface','App\Repository\Classes\trayIconRepo');
         $this->app->bind('App\Repository\Interfaces\stickerInterface','App\Repository\Classes\stickerRepo');
+        $this->app->bind('App\Repository\Interfaces\trendingInterface','App\Repository\Classes\trendingRepo');
     }
 }
